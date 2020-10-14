@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.header-font {
+    color: white
+}
+
+.margin-small {
+    margin: 5px;
+}

@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "krishna",
+      "country": "india",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "sarah",
+      "country": "england",
+      "password": "123"
+    },
+    {
+      "id": 3,
+      "username": "admin",
+      "country": "usa",
+      "password": "123"
+    },
+    {
+      "username": "test2",
+      "password": "123",
+      "id": 4
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "job": "Plumber"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "job": "developer"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "job": "Manager"
+    }
+  ],
+  "products": [
+    {
+      "text": "Section 3",
+      "summary": " this is first post request !!!!",
+      "class": "pimg1",
+      "maintext": "LOGIN",
+      "section-class": "section-light",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "text": "Section 2",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi facilis consequatur, odio hic minima nostrum. Perferendis eos earum praesentium, blanditiis sapiente labore aliquam ipsa architecto vitae. Minima soluta temporibus voluptates inventore commodi cumque esse suscipit optio aliquam et, dolorem a cupiditate nihil fuga laboriosam fugiat placeat dignissimos! Unde eveniet placeat quisquam blanditiis voluptatem doloremque fugiat dolor repellendus ratione in. Distinctio provident dolorem modi cumque illo enim quidem tempora deserunt nostrum voluptate labore repellat quisquam quasi cum suscipit dolore ab consequuntur, ad porro earum temporibus. Laborum ad temporibus ex, omnis!",
+      "class": "pimg2",
+      "maintext": "GYM LOVER",
+      "section-class": "section-dark"
+    },
+    {
+      "id": 3,
+      "text": "Section 3",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi facilis consequatur, odio hic minima nostrum. Perferendis eos earum praesentium, blanditiis sapiente labore aliquam ipsa architecto vitae. Minima soluta temporibus voluptates inventore commodi cumque esse suscipit optio aliquam et, dolorem a cupiditate nihil fuga laboriosam fugiat placeat dignissimos! Unde eveniet placeat quisquam blanditiis voluptatem doloremque fugiat dolor repellendus ratione in. Distinctio provident dolorem modi cumque illo enim quidem tempora deserunt nostrum voluptate labore repellat quisquam quasi cum suscipit dolore ab consequuntur, ad porro earum temporibus. Laborum ad temporibus ex, omnis!",
+      "class": "pimg3",
+      "maintext": "WORKOUT WEBSITE",
+      "section-class": "section-dark"
+    }
+  ]
+}
