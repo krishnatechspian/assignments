@@ -1,3 +1,4 @@
+import { environment } from './../../../../../../apps/sports/src/environments/environment';
 import { Authenticate, User } from '@assignments/data-models';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -18,10 +19,12 @@ export class AuthService {
       this.userSubject$.next(JSON.parse(user));
     }
   }
+
+  // login user
   
   login(authenticate: Authenticate): Observable<User> {
     return this.httpClient.post<User>(
-      'http://localhost:3000/login',
+      environment.api_url + 'login',
       authenticate
     ).pipe(tap((user: User) => {
         this.userSubject$.next(user);

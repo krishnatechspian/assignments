@@ -1,7 +1,6 @@
 import { Store } from '@ngrx/store';
 import { AuthState } from './../../+state/auth.reducer';
 import { Authenticate } from '@assignments/data-models';
-import { AuthService } from './../../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -22,10 +21,10 @@ export class LoginComponent implements OnInit {
     private store: Store<AuthState>) { }
 ​
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login() {
+    // dispatch login data into store
     this.store.dispatch(new authActions.Login({
       username: this.loginForm.value.username,
       password: this.loginForm.value.password

@@ -16,6 +16,7 @@ import { Store, select } from '@ngrx/store';
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private store: Store<AuthState>) {}
 
+  // If logged in user than login to main page, else just route to login page
   canActivate(
     next: ActivatedRouteSnapshot,
     routerState: RouterStateSnapshot

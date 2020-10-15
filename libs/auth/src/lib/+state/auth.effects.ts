@@ -18,10 +18,14 @@ export class AuthEffects {
         .login(action.payload)
         .pipe(
           map((user: User) => new authActions.LoginSuccess(user)),
-          catchError(error => of(new authActions.LoginFail(error)))
+          catchError((error) => {
+            alert("Login Failed...");
+            return of(new authActions.LoginFail(error))
+          })
         )
     )
   );
+
   @Effect({ dispatch: false })
   navigateToProfile$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoginSuccess),
@@ -33,5 +37,5 @@ export class AuthEffects {
     private actions$: Actions,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) { }
 }

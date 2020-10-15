@@ -1,9 +1,13 @@
+import { Product } from './../../../../data-models/product.d';
 import { Action } from '@ngrx/store';
 
 export enum ProductsActionTypes {
   LoadProducts = '[Products Page] Load Products',
   LoadProductsSuccess = '[Products API] Load Products Success',
-  LoadProductsFail = '[Products API] LoadProducts Fail'
+  LoadProductsFail = '[Products API] LoadProducts Fail',
+  UpdateProducts = '[Products Page] Update Products',
+  UpdateProductsSuccess = '[Products API] Update Products Success',
+  UpdateProductsFail = '[Products API] Update Products Fail'
 }
 
 export class LoadProducts implements Action {
@@ -19,4 +23,23 @@ export class LoadProductsFail implements Action {
   constructor(public payload: any) {}
 }
 
-export type ProductsActions = LoadProducts | LoadProductsSuccess | LoadProductsFail;
+export class UpdateProductsSuccess implements Action {
+  readonly type = ProductsActionTypes.UpdateProductsSuccess;
+  constructor(public payload: any) {}
+}
+
+export class UpdateProductsFail implements Action {
+  readonly type = ProductsActionTypes.UpdateProductsFail;
+  constructor(public payload: any) {}
+}
+
+
+export class UpdateProducts implements Action {
+  readonly type = ProductsActionTypes.UpdateProducts;
+}
+
+
+
+export type ProductsActions = LoadProducts 
+| LoadProductsSuccess | LoadProductsFail 
+| UpdateProductsFail | UpdateProductsSuccess | UpdateProducts;

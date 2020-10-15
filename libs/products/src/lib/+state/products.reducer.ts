@@ -37,6 +37,9 @@ export function productsReducer(
       return adapter.removeAll({ ...state, error: action.payload });
     }
 
+    case ProductsActionTypes.UpdateProductsSuccess:
+      return adapter.updateOne({ id: action.payload.id, changes: action.payload }, state);
+
     default:
       return state;
   }

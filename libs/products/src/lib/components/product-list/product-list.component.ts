@@ -6,11 +6,16 @@ import { Product } from '@assignments/data-models';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   @Input() products: Product[];
-  @Output() filter = new EventEmitter<string>();
+  @Output() edit = new EventEmitter<Product>();
 
-  onFilter(category: string) {
-    this.filter.emit(category);
+
+  editProduct(product:Product){
+    this.edit.emit(product);
+  }
+
+  ngOnInit() {
+    // console.log(this.products);
   }
 }

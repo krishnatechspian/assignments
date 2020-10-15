@@ -11,10 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromAuth from './+state/auth.reducer';
 import { AuthEffects } from './+state/auth.effects';
 import { NxModule } from '@nrwl/angular';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../../src/../../../apps/sports/src/environments/environment';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { authReducer, initialState as authInitialState } from './+state/auth.reducer';
+import { initialState as authInitialState } from './+state/auth.reducer';
 export const authRoutes: Route[] = [
   { path: 'login', component: LoginComponent },
 ];

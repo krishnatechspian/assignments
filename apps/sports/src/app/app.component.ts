@@ -2,7 +2,6 @@ import { LoginSuccess } from './../../../../libs/auth/src/lib/+state/auth.action
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AuthState } from '@assignments/auth';
-// import { LoginSuccess } from '@assignments/auth/src/lib/+state/auth.actions';
 
 @Component({
   selector: 'assignments-root',
@@ -13,6 +12,11 @@ export class AppComponent {
   title = 'sports';
 
   constructor(private store: Store<AuthState>){
+   /* Get data of logged in user from localStorage. 
+
+   if its true just route to main page.
+   
+   */
     const user = JSON.parse(localStorage.getItem('user'));
     if(user) {
       this.store.dispatch(new LoginSuccess(user))

@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsEffects } from './+state/products.effects';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,12 +20,14 @@ import { ProductAddEditComponent } from './components/product-add-edit/product-a
     RouterModule.forChild([
       /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
       { path: '', component: ProductsComponent },
+      { path: 'add-edit', component: ProductAddEditComponent },
     ]),
-
    
     StoreModule.forFeature('products', productsReducer, { initialState: productsInitialState }),
     EffectsModule.forFeature([ProductsEffects]),
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [ProductsComponent, ProductListComponent, ProductAddEditComponent],
   providers: [ProductsEffects]
