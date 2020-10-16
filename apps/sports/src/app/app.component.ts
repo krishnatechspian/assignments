@@ -1,4 +1,4 @@
-import { LoginSuccess } from './../../../../libs/auth/src/lib/+state/auth.actions';
+import { LoginSuccess } from '@assignments/auth';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AuthState } from '@assignments/auth';

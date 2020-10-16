@@ -74,4 +74,9 @@ export class ProductsComponent implements OnInit {
     // });
   }
 
+  logOut(){
+    localStorage.clear();
+    this.isAuthenticated = false;
+  }
+
 }

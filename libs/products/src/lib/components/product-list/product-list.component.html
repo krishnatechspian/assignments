@@ -1,8 +1,5 @@
 <div class="header">
     <a href="#default" class="logo">Techspian</a>
-    <div class="header-right">
-        <a class="active" routerLink="/main">Main Page</a>
-    </div>
 </div>
 
 <div class="section">
@@ -12,14 +9,12 @@
             <th>Summary</th>
             <th>Text</th>
             <th>Edit</th>
-            <th>Delete</th>
         </tr>
         <tr *ngFor="let product of products">
             <td>{{product.maintext}}</td>
             <td>{{product.summary}}</td>
             <td>{{product.text}}</td>
             <td><span class="cursor-pointer font-green" (click)="editProduct(product)">Edit</span></td>
-            <td><span class="cursor-pointer font-red">Delete</span></td>
         </tr>
     </table>
 </div>
