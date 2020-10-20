@@ -30,7 +30,7 @@ export function productsReducer(
       return { ...state, loading: true };
 
     case ProductsActionTypes.LoadProductsSuccess: {
-      return adapter.addAll(action.payload, { ...state, error: '' });
+      return adapter.setAll(action.payload, { ...state, error: '' });
     }
 
     case ProductsActionTypes.LoadProductsFail: {

@@ -39,6 +39,6 @@ export class UpdateProducts implements Action {
 
 
 
-export type ProductsActions = LoadProducts 
-| LoadProductsSuccess | LoadProductsFail 
+export type ProductsActions = LoadProducts
+| LoadProductsSuccess | LoadProductsFail
 | UpdateProductsFail | UpdateProductsSuccess | UpdateProducts;

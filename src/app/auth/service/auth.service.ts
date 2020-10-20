@@ -22,7 +22,6 @@ export class AuthService {
   }
 
   // login user
-  
   login(authenticate: Authenticate): Observable<User> {
     return this.httpClient.post<User>(
       environment.api_url + 'login',
@@ -33,3 +32,4 @@ export class AuthService {
     }));
   }
 }
+

@@ -16,7 +16,7 @@ import { getProducts } from './+state';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
- 
+
   products$: Observable<Product[]>;
   product: any;
   getState: Observable<any>;

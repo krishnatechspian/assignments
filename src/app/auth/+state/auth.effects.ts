@@ -19,8 +19,8 @@ export class AuthEffects {
         .pipe(
           map((user: User) => new authActions.LoginSuccess(user)),
           catchError((error) => {
-            alert("Login Failed...");
-            return of(new authActions.LoginFail(error))
+            alert('Login Failed...');
+            return of(new authActions.LoginFail(error));
           })
         )
     )
