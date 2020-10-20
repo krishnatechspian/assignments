@@ -1,0 +1,19 @@
+<app-header [headerDetails]="headerDetails"></app-header>
+
+<div class="section">
+    <!-- <app-table [items]="products$ | async" [headers]="headers"></app-table> -->
+    <table id="customers">
+        <tr>
+            <th>Header</th>
+            <th>Summary</th>
+            <th>Text</th>
+            <th>Edit</th>
+        </tr>
+        <tr *ngFor="let product of products$ | async">
+            <td>{{product.maintext}}</td>
+            <td>{{product.summary}}</td>
+            <td>{{product.text}}</td>
+            <td><span class="cursor-pointer font-green" (click)="editProduct(product)">Edit</span></td>
+        </tr>
+    </table>
+</div>

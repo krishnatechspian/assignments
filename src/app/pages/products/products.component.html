@@ -1,0 +1,43 @@
+<!--All three pages in a same main page have to make it seperate route in future.
+Here pages are shown as per if condition  -->
+
+<ng-container *ngIf="!isEditSection">
+    <!-- Have to make these two if condition into one -->
+    <ng-container *ngIf="!isHeaderSection">
+        <ng-container *ngFor="let product of products$ | async">
+            <div [ngClass]="getClasses(product.class)">
+                <div class="ptext">
+                    <ng-container *ngIf="product.maintext === 'LOGIN'; else normalPage">
+                        <div *ngIf="isAuthenticated; then doSomething; else doSomethingElse;"></div>
+                        <ng-template #doSomething>
+                            <p class="header-font">You logged in <em>{{user.username}}!</em></p>
+                            <button class="btn btn-primary" (click)="logOut()">Log out</button>
+                            <button class="btn btn-primary margin-small" (click)="gotToAdminSection()">Admin Section</button>
+                        </ng-template>
+                        <ng-template #doSomethingElse>
+                            <p class="header-font">Please Logged in</p>
+                            <a class="header-font" [routerLink]="['/user/login']" class="btn btn-primary">Log in</a>
+                        </ng-template>
+                    </ng-container>
+
+                    <ng-template #normalPage>
+                        <span class="border ">
+                {{product.maintext}}
+              </span>
+                    </ng-template>
+                </div>
+            </div>
+
+            <section class="section section-light">
+                <h2>{{product.text}}</h2>
+                <p>
+                    {{product.summary}}
+                </p>
+            </section>
+        </ng-container>
+    </ng-container>
+
+</ng-container>
+
+<!-- <assignments-product-list *ngIf="isHeaderSection" [products]="products$ | async" (edit)="editProduct($event)"></assignments-product-list>
+<assignments-product-add-edit *ngIf="isEditSection" (editProduct)="getDataFromEdit($event)"></assignments-product-add-edit> -->

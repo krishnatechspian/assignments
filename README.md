@@ -1,28 +1,27 @@
-# Assignments
+# AssignmentsAngular
 
-#How to install
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
-1. git clone
-2. npm install
-3. npm start
-4. npm run server
+## Development server
 
-#you can also do
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-1. git clone
-2. nx install
-3. nx start
-4. nx run server
+## Code scaffolding
 
-#test lint 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-1. nx lint 
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-#use case
+## Running unit tests
 
-1. Guest/Admin user can see main page with login button enable.
-2. Admin user can able to login to change the text and summary of the Main page.
-3. After login Admin user can see logout and admin serction button on Main page.
-4. They can click on Admin section button to edit the Main page data.
-5. Right now all Main/Product pages are link to same page based on if condition. There is no change in URL.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

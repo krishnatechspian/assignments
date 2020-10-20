@@ -1,0 +1,15 @@
+<app-header [headerDetails]="headerDetails"></app-header>
+
+<div class=" margin-medium">
+    <div class="container">
+        <form [formGroup]="editProductForm">
+
+            <label for="text" class="required">Text</label>
+            <input type="text" id="text" name="text" placeholder="Small Text.." formControlName="text">
+
+            <label for="summary" class="required">Summary</label>
+            <textarea formControlName="summary" id="summary" name="summary" placeholder="Write something.." style="height:200px"></textarea>
+            <button class="btn btn-primary" (click)="updateProduct()" [disabled]="!editProductForm.valid">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<table>
+    <thead>
+        <td *ngFor="let header of headers">{{ header }}</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td *ngFor="let value of item | tableValues">
+                {{ value }}
+            </td>
+        </tr>
+    </tbody>
+</table>

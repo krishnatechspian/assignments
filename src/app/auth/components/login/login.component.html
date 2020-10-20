@@ -1,0 +1,16 @@
+<div class="header">
+    <a href="#default" class="logo">Login</a>
+    <div class="header-right">
+        <a class="active" routerLink="/main">Main</a>
+    </div>
+</div>
+<div class=" margin-medium">
+    <div class="container">
+        <form [formGroup]="loginForm">
+            <label for="text" class="required">Username</label>
+            <input type="text" id="username" name="username" placeholder="Username." formControlName="username"> <label for="text" class="required">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password." formControlName="password">
+            <button class="button" (click)="login()" [disabled]="!loginForm.valid">Submit</button>
+        </form>
+    </div>
+</div>
