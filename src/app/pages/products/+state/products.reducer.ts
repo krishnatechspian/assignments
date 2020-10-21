@@ -29,13 +29,69 @@ export function productsReducer(
     case ProductsActionTypes.LoadProducts:
       return { ...state, loading: true };
 
+    // case ProductsActionTypes.LoadHeadersButtons:
+    //   return { ...state, loading: true };
+
+    // case ProductsActionTypes.LoadImages:
+    //   return { ...state, loading: true };
+
+    // case ProductsActionTypes.LoadDetails:
+    //   return { ...state, loading: true };
+
+    // case ProductsActionTypes.LoadMain:
+    //   return { ...state, loading: true };
+
+    // case ProductsActionTypes.LoadServices:
+    //   return { ...state, loading: true };
+
+
     case ProductsActionTypes.LoadProductsSuccess: {
       return adapter.setAll(action.payload, { ...state, error: '' });
     }
 
+    // case ProductsActionTypes.LoadHeadersButtonsSuccess: {
+    //   return adapter.setAll(action.payload, { ...state, error: '' });
+    // }
+
+    // case ProductsActionTypes.LoadImagesSuccess: {
+    //   return adapter.setAll(action.payload, { ...state, error: '' });
+    // }
+
+    // case ProductsActionTypes.LoadMainSuccess: {
+    //   return adapter.setAll(action.payload, { ...state, error: '' });
+    // }
+
+    // case ProductsActionTypes.LoadDetailsFail: {
+    //   return adapter.setAll(action.payload, { ...state, error: '' });
+    // }
+
+    // case ProductsActionTypes.LoadServicesSuccess: {
+    //   return adapter.setAll(action.payload, { ...state, error: '' });
+    // }
+
     case ProductsActionTypes.LoadProductsFail: {
       return adapter.removeAll({ ...state, error: action.payload });
     }
+
+    // case ProductsActionTypes.LoadHeadersButtonsFail: {
+    //   return adapter.removeAll({ ...state, error: action.payload });
+    // }
+
+    // case ProductsActionTypes.LoadServicesFail: {
+    //   return adapter.removeAll({ ...state, error: action.payload });
+    // }
+
+    // case ProductsActionTypes.LoadImagesFail: {
+    //   return adapter.removeAll({ ...state, error: action.payload });
+    // }
+
+    // case ProductsActionTypes.LoadDetailsFail: {
+    //   return adapter.removeAll({ ...state, error: action.payload });
+    // }
+
+    // case ProductsActionTypes.LoadMainFail: {
+    //   return adapter.removeAll({ ...state, error: action.payload });
+    // }
 
     case ProductsActionTypes.UpdateProductsSuccess:
       return adapter.updateOne({ id: action.payload.id, changes: action.payload }, state);

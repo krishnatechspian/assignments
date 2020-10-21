@@ -1,0 +1,18 @@
+<!-- Navigation -->
+<nav class="main-nav">
+    <ul>
+        <li *ngFor="let data of headerButtons">
+            <div *ngIf="isAuthenticated; then doSomething; else doSomethingElse;"></div>
+            <ng-template #doSomething>
+                <ng-container *ngIf="data.text !== 'Login'">
+                    <a href="#">{{data.text}}</a>
+                </ng-container>
+            </ng-template>
+            <ng-template #doSomethingElse>
+                <ng-container *ngIf="data.text === 'Login'">
+                    <a routerLink="/user/login">{{data.text}}</a>
+                </ng-container>
+            </ng-template>
+        </li>
+    </ul>
+</nav>

@@ -45,6 +45,18 @@ server.use('/users', (req, res, next) => {
   }
 });
 
+
+
+
+// server.use('/headers-button ', (req, res, next) => {
+//   if (isAuthorized(req) || req.query.bypassAuth === 'true') {
+//     next();
+//   } else {
+//     res.sendStatus(401);
+//   }
+// });
+
+
 server.use(router);
 server.listen(3000, () => {
   console.log('JSON Server is running');
@@ -72,4 +84,10 @@ function readUsers() {
   const dbRaw = fs.readFileSync('./data/db.json');
   const users = JSON.parse(dbRaw).users;
   return users;
+}
+
+function readData(data): void {
+  const dbRaw = fs.readFileSync('./data/db.json');
+  const dataset = JSON.parse(dbRaw).data;
+  return dataset;
 }

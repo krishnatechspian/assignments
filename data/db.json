@@ -47,5 +47,120 @@
             "section-class": "section-dark",
             "id": 3
         }
-    ]
+    ],
+    "headers-button": [{
+            "text": "Home",
+            "id": 1,
+            "url": "/"
+        },
+        {
+            "text": "Admin",
+            "id": 2,
+            "url": "/product/list"
+        },
+        {
+            "text": "Logout",
+            "id": 4
+        },
+        {
+            "text": "Login",
+            "id": 3,
+            "url": "/user/login"
+        }
+
+    ],
+    "services": [{
+            "text": "Gym Membership",
+            "price": "2000rs",
+            "id": 1
+        },
+        {
+            "text": "Buy sports items",
+            "price": "1000rs plus",
+            "id": 2
+        },
+        {
+            "text": "Tennis Membership",
+            "price": "6000rs",
+            "id": 3
+        },
+        {
+            "text": "Cricket Membership",
+            "price": "1000rs",
+            "id": 4
+        },
+        {
+            "text": "Football Membership",
+            "price": "4000rs",
+            "id": 5
+        }
+
+    ],
+
+    "images": [{
+            "url": "https://i.ibb.co/c12j7xf/sushil.jpg",
+            "id": 1
+        },
+        {
+            "url": "https://i.ibb.co/7k0cJXs/ab.jpg",
+            "id": 2
+        },
+        {
+            "url": "https://i.ibb.co/J31P1q5/app-image.png",
+            "id": 3
+        },
+        {
+            "url": "https://i.ibb.co/dbMDwbV/app-image2.png",
+            "id": 4
+        },
+        {
+            "url": "https://i.ibb.co/qMWScsW/cta-bg.jpg",
+            "id": 5
+        },
+        {
+            "url": "https://i.ibb.co/gPq6b5v/gym.jpg",
+            "id": 6
+        },
+        {
+            "url": "https://i.ibb.co/2Y5LgrF/gym1.jpg",
+            "id": 7
+        },
+        {
+            "url": "https://i.ibb.co/mFHq21Y/header.jpg",
+            "id": 8
+        },
+        {
+            "url": "https://i.ibb.co/WHhMG3f/i-Phone-app.png",
+            "id": 9
+        },
+        {
+            "url": "https://i.ibb.co/M7t8szf/baseball.jpg",
+            "id": 10
+        },
+        {
+            "url": "https://i.ibb.co/PtP2y3C/rogers.jpg",
+            "id": 11
+        },
+        {
+            "url": "https://i.ibb.co/bm9Wg7v/ronaldo.jpg",
+            "id": 12
+        }, {
+            "url": "https://i.ibb.co/PQqrsVk/Sports-Stores-01.jpg",
+            "id": 13
+        }
+    ],
+
+    "details": [{
+        "text": "ASAH",
+        "id": 1,
+        "url": "https://i.ibb.co/mFHq21Y/header.jpg",
+        "details": "All work and no play makes Jack a dull boy"
+    }],
+
+    "main": [{
+        "text": "",
+        "id": 1,
+        "url": "https://i.ibb.co/mFHq21Y/header.jpg",
+        "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae alias reiciendis deleniti possimus nemo non repellendus? Quae atque vero modi quidem! Autem cupiditate fugit doloribus ad amet, asperiores provident commodi."
+    }]
 }

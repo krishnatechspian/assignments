@@ -1,3 +1,6 @@
+import { LoginSuccess, LoginFail } from './../+state/auth.actions';
+import { AuthState } from './../+state/auth.reducer';
+import { Store } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { User } from '../data-models/user.d';
 import { Authenticate } from '../data-models/authenticate.d';
@@ -14,11 +17,12 @@ export class AuthService {
   private userSubject$ = new BehaviorSubject<User>(null);
   user$ = this.userSubject$.asObservable();
 
-  constructor(private httpClient: HttpClient) {
-    const user = localStorage.getItem('user');
-    if (user) {
-      this.userSubject$.next(JSON.parse(user));
-    }
+  constructor(private httpClient: HttpClient,
+              private store: Store<AuthState>) {
+    // const user = JSON.parse(localStorage.getItem('user'));
+    // if (user) {
+    //   this.store.dispatch(new LoginSuccess(user));
+    // }
   }
 
   // login user
@@ -27,9 +31,20 @@ export class AuthService {
       environment.api_url + 'login',
       authenticate
     ).pipe(tap((user: User) => {
-        this.userSubject$.next(user);
-        localStorage.setItem('user', JSON.stringify(user));
+      this.userSubject$.next(user);
+      localStorage.setItem('user', JSON.stringify(user));
     }));
+  }
+
+  checkAuthentication(): boolean{
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+        this.store.dispatch(new LoginSuccess(user));
+        return true;
+    }else{
+        this.store.dispatch(new LoginFail(user));
+        return false;
+    }
   }
 }
 

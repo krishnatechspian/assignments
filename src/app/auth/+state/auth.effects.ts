@@ -30,7 +30,7 @@ export class AuthEffects {
   navigateToProfile$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoginSuccess),
     map((action: authActions.LoginSuccess) => action.payload),
-    tap(() => this.router.navigate([`/product/main`]))
+    tap(() => this.router.navigate([`/product/main2`]))
   );
 
   constructor(

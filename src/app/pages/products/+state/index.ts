@@ -1,5 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as fromProduct from './products.reducer';
+import * as fromHeaderButton from './headers-button/headers-button.reducer';
 
 export const getProductsState = createFeatureSelector<fromProduct.ProductsData>('products');
 export const getProducts = createSelector(getProductsState, fromProduct.selectAllProducts);
@@ -10,3 +11,6 @@ export const getSelectedProduct = createSelector(getProductEntnites, getSelected
    debugger;
    return  productsDictionary[id];
 });
+
+
+
