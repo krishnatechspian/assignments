@@ -23,12 +23,14 @@ import { imagesReducer, initialState as imagesReducerInitialState  } from './+st
 import { detailsReducer, initialState as detailsInitialState  } from './+state/details/details.reducer';
 import { mainReducer, initialState as mainInitialState  } from './+state/main/main.reducer';
 import { serviceReducer, initialState as serviceInitialState  } from './+state/services/services.reducer';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const authRoutes: Routes = [
     { path: 'main', component: ProductsComponent },
     { path: 'list', component: ProductListComponent },
     { path: 'edit/:id', component: ProductAddEditComponent},
     { path: 'main2', component: Product2Component},
+    { path: 'details/:id', component: ProductDetailsComponent},
 ];
 
 @NgModule({
@@ -47,7 +49,8 @@ const authRoutes: Routes = [
         EffectsModule.forFeature([ProductsEffects, HeaderButtonsEffects, ImagesEffects,
              DetailsEffects, MainEffects, ServicesEffects]),
     ],
-    declarations: [ProductsComponent, ProductListComponent, ProductAddEditComponent, Product2Component],
+    declarations: [ProductsComponent, ProductListComponent,
+        ProductAddEditComponent, Product2Component, ProductDetailsComponent],
     providers: [ProductsEffects, HeaderButtonsEffects, ImagesEffects, DetailsEffects,
         MainEffects, ServicesEffects]
 })

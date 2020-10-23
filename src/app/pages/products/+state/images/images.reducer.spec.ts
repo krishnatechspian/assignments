@@ -1,10 +1,10 @@
-import { authReducer, initialState } from './auth.reducer';
+import { imagesReducer, initialState } from './images.reducer';
 
-describe('Auth Reducer', () => {
+describe('Images Reducer', () => {
     describe('undefined action', () => {
         it('should return the default state', () => {
             const action = { type: 'NOOP' } as any;
-            const result = authReducer(undefined, action);
+            const result = imagesReducer(undefined, action);
             expect(result).toBe(initialState);
         });
     });

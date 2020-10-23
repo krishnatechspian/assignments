@@ -1,10 +1,10 @@
-import { authReducer, initialState } from './auth.reducer';
+import { serviceReducer, initialState } from './services.reducer';
 
-describe('Auth Reducer', () => {
+describe('Service Reducer', () => {
     describe('undefined action', () => {
         it('should return the default state', () => {
             const action = { type: 'NOOP' } as any;
-            const result = authReducer(undefined, action);
+            const result = serviceReducer(undefined, action);
             expect(result).toBe(initialState);
         });
     });

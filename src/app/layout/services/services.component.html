@@ -2,8 +2,10 @@
     <section class="boxes">
         <div class="box" *ngFor="let data of service">
             <i class="fas fa-chart-pie fa-4x"></i>
-            <h3>{{ data.text }}</h3>
-            <p>{{ data.details }}</p>
+            <a routerLink="/product/details/{{ data.id}}">
+                <h3>{{ data.text }}</h3>
+            </a>
+            <p>starting from {{ data.price }}</p>
         </div>
     </section>
 </section>

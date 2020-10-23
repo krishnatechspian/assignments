@@ -1,19 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { Observable } from 'rxjs';
+import { ProductsService } from '../../services/products/products.service';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { ProductsService } from '../services/products/products.service';
-import { ProductsEffects } from './products.effects';
-describe('ProductsEffects', () => {
+import { MainEffects } from './main.effects';
+describe('MainEffects', () => {
     // tslint:disable-next-line: prefer-const
     let actions: Observable<any>;
-    let effects: ProductsEffects;
+    let effects: MainEffects;
     let productService: ProductsService;
 
     beforeEach(() => {
         const newLocal = provideMockActions(() => actions);
         TestBed.configureTestingModule({
           providers: [
-            ProductsEffects,
+            MainEffects,
             newLocal,
             {
               provide: ProductsService
@@ -21,7 +21,7 @@ describe('ProductsEffects', () => {
           ]
         });
 
-        effects = TestBed.inject(ProductsEffects);
+        effects = TestBed.inject(MainEffects);
         productService = TestBed.inject(ProductsService);
       });
 

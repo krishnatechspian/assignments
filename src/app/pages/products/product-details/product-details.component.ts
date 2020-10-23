@@ -7,7 +7,7 @@ import { LoadMain } from './../+state/main/main.actions';
 import { LoadServices } from './../+state/services/services.actions';
 import { Service } from './../../../auth/data-models/service.d';
 import { Details } from '../../../auth/data-models/details';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { getProducts } from './../+state/index';
 import { getHeaderButtons } from './../+state/headers-button/index';
 import { getImages } from './../+state/images/index';
@@ -35,52 +35,27 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Image } from 'src/app/auth/data-models/image';
 import { Main } from 'src/app/auth/data-models/main';
 @Component({
-    selector: 'app-product-main',
-    templateUrl: './main-layout-2.component.html',
-    styleUrls: ['./main-layout-2.component.scss']
+    selector: 'app-product-details',
+    templateUrl: './product-details.component.html'
 })
-export class Product2Component implements OnInit {
-    public headerDetails: any = {
-        page: 'Product List'
-    };
-    products$: Observable<Product[]>;
-    images$: Observable<Image[]>;
-    details$: Observable<Details[]>;
-    main$: Observable<Main[]>;
+export class ProductDetailsComponent implements OnInit  {
     service$: Observable<Service[]>;
-    headerButtons$: Observable<HeaderButtons[]>;
-    getState: Observable<any>;
-    user$: Observable<User>;
-    isAuthenticated = false;
-
-    constructor(private store: Store<ProductsState>,
-                private storeHeaderButton: Store<HeadersButtonState>,
-                private storeImages: Store<ImagesState>,
-                private storeDetails: Store<DetailsState>,
-                private storeMain: Store<MainState>,
-                private storeService: Store<ServiceState>,
-                private authStore: Store<AuthState>,
-                private authService: AuthService
-    ) {
-        this.user$ = this.authStore.select(getUser);
-        this.isAuthenticated = this.authService.checkAuthentication();
+    service: any = [];
+    serviceId: number;
+    constructor(private storeService: Store<ServiceState>,
+                private route: ActivatedRoute){
+                    // tslint:disable-next-line: no-unused-expression
+                this.serviceId =  this.route.snapshot.params.id;
     }
+
     ngOnInit(): void {
-
-        this.storeHeaderButton.dispatch(new LoadHeadersButtons());
-        this.headerButtons$ = this.storeHeaderButton.pipe(select(getHeaderButtons));
-
-        this.storeImages.dispatch(new LoadImages());
-        this.images$ = this.storeImages.pipe(select(getImages));
-
-        this.storeDetails.dispatch(new LoadDetails());
-        this.details$ = this.storeDetails.pipe(select(getDetails));
-
-        this.storeMain.dispatch(new LoadMain());
-        this.main$ = this.storeMain.pipe(select(getMain));
-
         this.storeService.dispatch(new LoadServices());
-        this.service$ = this.storeService.pipe(select(getService));
-
-    }
+        this.storeService.pipe(select(getService)).subscribe(
+            (data) => {
+                console.log(data);
+                this.service = data.filter( service => service.id === (+this.serviceId));
+                console.log(this.service);
+            }
+        );
+     }
 }
