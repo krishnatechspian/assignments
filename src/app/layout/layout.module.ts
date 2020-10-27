@@ -10,12 +10,18 @@ import { HeaderLayoutComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShowcaseComponent } from './showcase/showcase.component';
+import { FollowLinkComponent } from './follow-link/follow-link.component';
+import { LinkComponent } from './links/links.component';
+import { FooterComponent } from './footer/footer.component';
+import { Details1Component } from './details-1/details-1.component';
 
 @NgModule({
     imports: [
         CommonModule,
         HttpClientModule,
+        FormsModule,
         ReactiveFormsModule,
         RouterModule
     ],
@@ -26,6 +32,11 @@ import { ReactiveFormsModule } from '@angular/forms';
          DetailsComponent,
          ImageComponent,
          MainDetailsComponent,
+         ShowcaseComponent,
+         FollowLinkComponent,
+         LinkComponent,
+         FooterComponent,
+         Details1Component,
          HeaderLayout2Component],
     exports: [HeaderLayoutComponent,
          TableComponent,
@@ -34,6 +45,11 @@ import { ReactiveFormsModule } from '@angular/forms';
           DetailsComponent,
           ImageComponent,
           MainDetailsComponent,
+          ShowcaseComponent,
+          LinkComponent,
+          FooterComponent,
+          FollowLinkComponent,
+          Details1Component,
           HeaderLayout2Component]
 })
 export class LayoutModule { }

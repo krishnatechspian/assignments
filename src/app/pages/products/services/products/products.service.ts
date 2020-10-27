@@ -1,4 +1,4 @@
-import { HeaderButtons } from './../../../../auth/data-models/header-button.d';
+import { HeaderButtons } from '../../../../auth/data-models/header-button';
 import { Product } from './../../../../auth/data-models';
 import { environment } from './../../../../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -44,6 +44,16 @@ export class ProductsService {
     return this.data.asObservable();
   }
 
+   // Get all products from database
+   getDetails(category = null): Observable<Details[]> {
+    const url =
+      category !== null
+        ? environment.api_url + `details?category=${category}`
+        : environment.api_url + `details`;
+
+    return this.httpClient.get<Details[]>(url);
+  }
+
   // Get all HeaderButtons from database
   getHeaderButtons(category = null): Observable<HeaderButtons[]> {
     const url =
@@ -74,15 +84,7 @@ export class ProductsService {
     return this.httpClient.get<Image[]>(url);
   }
 
-  // Get all products from database
-  getDetails(category = null): Observable<Details[]> {
-    const url =
-      category !== null
-        ? environment.api_url + `details?category=${category}`
-        : environment.api_url + `details`;
 
-    return this.httpClient.get<Details[]>(url);
-  }
 
   // Get all products from database
   getMain(category = null): Observable<Main[]> {

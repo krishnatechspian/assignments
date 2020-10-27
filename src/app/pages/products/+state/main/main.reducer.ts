@@ -6,7 +6,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { Main } from 'src/app/auth/data-models/main';
 
 export interface MainData extends EntityState<Main> {
-  error: string;
+  error?: Error;
   selectedMainId: number;
   loading: boolean;
 }
@@ -15,10 +15,9 @@ export interface MainState {
   readonly main: MainData;
 }
 
-export const adapter: EntityAdapter<Main> = createEntityAdapter<Main>({});
+export const adapter: EntityAdapter<Main> = createEntityAdapter<Main>();
 
 export const initialState: MainData = adapter.getInitialState({
-  error: '',
   selectedMainId: null,
   loading: false
 });
@@ -33,11 +32,11 @@ export function mainReducer(
 
 
     case MainActionTypes.LoadMainSuccess: {
-      return adapter.setAll(action.payload, { ...state, error: '' });
+      return adapter.setAll(action.payload, { ...state, error: undefined });
     }
 
     case MainActionTypes.LoadMainFail: {
-      return adapter.removeAll({ ...state, error: action.payload });
+      return { ...state, error: action.payload.error, loading: false };
     }
 
     default:

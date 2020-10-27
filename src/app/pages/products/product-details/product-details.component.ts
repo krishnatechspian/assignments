@@ -5,7 +5,7 @@ import { getUser } from './../../../auth/+state/index';
 
 import { LoadMain } from './../+state/main/main.actions';
 import { LoadServices } from './../+state/services/services.actions';
-import { Service } from './../../../auth/data-models/service.d';
+import { Service } from '../../../auth/data-models/service';
 import { Details } from '../../../auth/data-models/details';
 import { ActivatedRoute, Router } from '@angular/router';
 import { getProducts } from './../+state/index';

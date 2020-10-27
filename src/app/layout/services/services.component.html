@@ -1,11 +1,68 @@
-<section class="">
+<!-- <section class="">
     <section class="boxes">
         <div class="box" *ngFor="let data of service">
             <i class="fas fa-chart-pie fa-4x"></i>
-            <a routerLink="/product/details/{{ data.id}}">
-                <h3>{{ data.text }}</h3>
-            </a>
-            <p>starting from {{ data.price }}</p>
+            <ng-container *ngIf="page === 'main'; else detailsPage">
+                <a routerLink="/product/details/{{ data.id}}">
+                    <h3>{{ data.text }}</h3>
+                </a>
+                <p>starting from {{ data.price }}</p>
+            </ng-container>
+            <ng-template #detailsPage>
+                <a>
+                    <h3>{{ data.text }}</h3>
+                </a>
+                 <p>starting from {{ data.price }}</p>
+                 <div>
+                    <a href="#" class="btn" routerLink="/product/payment">Book</a>
+                </div>
+            </ng-template>
+           
         </div>
     </section>
+</section> -->
+
+<section class="home-cards">
+    <div *ngFor="let data of service">
+        <img [src]="data.image" alt="">
+        <h3>{{ data.text }}</h3>
+        <p>
+            {{ data.description }}
+        </p>
+        
+        <ng-container *ngIf="page === 'main'; else detailsPage">
+            <a routerLink="/product/details/{{ data.id}}">Learn More <i class="fa fa-book" aria-hidden="true"></i></a>
+        </ng-container>
+        <ng-template #detailsPage>
+            <a  routerLink="/product/payment">Book<i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
+        </ng-template>
+
+    </div>
+    <!-- <div>
+      <img src="https://i.ibb.co/KjGFHVJ/card2.png" alt="" />
+      <h3>New Surface Laptop 3</h3>
+      <p>
+        Express yourself powerfully with a thin, light, and elegant design,
+        faster performance, and up to 11.5 hours battery life.
+      </p>
+      <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+    </div>
+    <div>
+      <img src="https://i.ibb.co/2cnshH6/card3.png" alt="" />
+      <h3>Save $150 + free controller</h3>
+      <p>
+        Buy an Xbox One X console and double your fun with a free select
+        extra controller. Starting at $349.
+      </p>
+      <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+    </div>
+    <div>
+      <img src="https://i.ibb.co/G57P0Pb/card4.png" alt="" />
+      <h3>The new Microsoft Edge</h3>
+      <p>
+        Expect more. World class performance, with more privacy, more
+        productivity, and more value.
+      </p>
+      <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+    </div> -->
 </section>

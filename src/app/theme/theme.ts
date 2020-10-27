@@ -19,7 +19,13 @@ export const light: Theme = {
 
     '--primary-default': '#5DFDCB',
     '--primary-dark': '#24B286',
-    '--primary-light': '#B2FFE7'
+    '--primary-light': '#B2FFE7',
+
+    '--a-default': '#262626',
+    '--p-default': '#000',
+    '--link-background': '#f2f2f2',
+    '--link-color': '#616161',
+    '--background-footer' : '#f2f2f2'
   }
 };
 
@@ -32,13 +38,18 @@ export const dark: Theme = {
     '--foreground-quaternary': '#E5E5E5',
     '--foreground-light': '#FFFFFF',
 
-    '--background-default': '#797C80',
+    '--background-default': '#050505',
     '--background-secondary': '#41474D',
     '--background-tertiary': '#08090A',
     '--background-light': '#41474D',
 
     '--primary-default': '#5DFDCB',
     '--primary-dark': '#24B286',
-    '--primary-light': '#B2FFE7'
+    '--primary-light': '#B2FFE7',
+    '--a-default': 'white',
+    '--p-default': 'white',
+    '--link-background': '#000',
+    '--link-color': 'white',
+    '--background-footer' : 'black'
   }
 };

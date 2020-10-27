@@ -1,5 +1,5 @@
 import { User } from '../data-models/user.d';
-import { Authenticate } from '../data-models/authenticate.d';
+import { Authenticate } from '../data-models/authenticate';
 import { Action } from '@ngrx/store';
 
 export enum AuthActionTypes {

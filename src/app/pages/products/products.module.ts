@@ -24,6 +24,8 @@ import { detailsReducer, initialState as detailsInitialState  } from './+state/d
 import { mainReducer, initialState as mainInitialState  } from './+state/main/main.reducer';
 import { serviceReducer, initialState as serviceInitialState  } from './+state/services/services.reducer';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { PaymentComponent } from './payment/payment.component';
+import { SharedModule } from 'src/app/components/component.module';
 
 const authRoutes: Routes = [
     { path: 'main', component: ProductsComponent },
@@ -31,6 +33,8 @@ const authRoutes: Routes = [
     { path: 'edit/:id', component: ProductAddEditComponent},
     { path: 'main2', component: Product2Component},
     { path: 'details/:id', component: ProductDetailsComponent},
+    { path: 'payment', component: PaymentComponent},
+
 ];
 
 @NgModule({
@@ -40,6 +44,7 @@ const authRoutes: Routes = [
         HttpClientModule,
         LayoutModule,
         ReactiveFormsModule,
+        SharedModule,
         StoreModule.forFeature('products', productsReducer, { initialState: productsInitialState }),
         StoreModule.forFeature('headers-button', headerButtonsReducer, { initialState: headerButtonsInitialState }),
         StoreModule.forFeature('images', imagesReducer, { initialState: imagesReducerInitialState }),
@@ -49,7 +54,7 @@ const authRoutes: Routes = [
         EffectsModule.forFeature([ProductsEffects, HeaderButtonsEffects, ImagesEffects,
              DetailsEffects, MainEffects, ServicesEffects]),
     ],
-    declarations: [ProductsComponent, ProductListComponent,
+    declarations: [ProductsComponent, ProductListComponent, PaymentComponent,
         ProductAddEditComponent, Product2Component, ProductDetailsComponent],
     providers: [ProductsEffects, HeaderButtonsEffects, ImagesEffects, DetailsEffects,
         MainEffects, ServicesEffects]

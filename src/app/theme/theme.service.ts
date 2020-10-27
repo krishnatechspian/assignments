@@ -30,7 +30,7 @@ export class ThemeService {
 
   setActiveTheme(theme: Theme): void {
     this.active = theme;
-
+    console.log(this.active);
     Object.keys(this.active.properties).forEach(property => {
       document.documentElement.style.setProperty(
         property,

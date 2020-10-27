@@ -5,7 +5,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { Service } from 'src/app/auth/data-models/service';
 
 export interface ServiceData extends EntityState<Service> {
-  error: string;
+  error?: Error;
   selectedServiceId: number;
   loading: boolean;
 }
@@ -17,7 +17,6 @@ export interface ServiceState {
 export const adapter: EntityAdapter<Service> = createEntityAdapter<Service>({});
 
 export const initialState: ServiceData = adapter.getInitialState({
-  error: '',
   selectedServiceId: null,
   loading: false
 });
@@ -32,11 +31,11 @@ export function serviceReducer(
 
 
     case ServicesActionTypes.LoadServicesSuccess: {
-      return adapter.setAll(action.payload, { ...state, error: '' });
+      return adapter.setAll(action.payload, { ...state, error: undefined });
     }
 
     case ServicesActionTypes.LoadServicesFail: {
-      return adapter.removeAll({ ...state, error: action.payload });
+      return { ...state, error: action.payload.error, loading: false };
     }
 
     default:

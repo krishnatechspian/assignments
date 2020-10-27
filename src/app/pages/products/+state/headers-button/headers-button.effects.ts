@@ -1,7 +1,7 @@
 import { ProductsService } from './../../services/products/products.service';
 import { LoadHeadersButtons } from '../headers-button/headers-button.actions';
 import { HeaderButtonActionTypes } from '../headers-button/headers-button.actions';
-import { HeaderButtons } from './../../../../auth/data-models/header-button.d';
+import { HeaderButtons } from '../../../../auth/data-models/header-button';
 import * as HeaderButtonAction from '../headers-button/headers-button.actions';
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';

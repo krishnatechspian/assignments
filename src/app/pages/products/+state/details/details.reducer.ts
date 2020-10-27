@@ -6,7 +6,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { Details } from 'src/app/auth/data-models/details';
 
 export interface DetailsData extends EntityState<Details> {
-  error: string;
+  error?: Error;
   selectedDetailsId: number;
   loading: boolean;
 }
@@ -15,10 +15,9 @@ export interface DetailsState {
   readonly details: DetailsData;
 }
 
-export const adapter: EntityAdapter<Details> = createEntityAdapter<Details>({});
+export const adapter: EntityAdapter<Details> = createEntityAdapter<Details>();
 
 export const initialState: DetailsData = adapter.getInitialState({
-  error: '',
   selectedDetailsId: null,
   loading: false
 });
@@ -33,11 +32,12 @@ export function detailsReducer(
 
 
     case DetailsActionTypes.LoadDetailsSuccess: {
-      return adapter.setAll(action.payload, { ...state, error: '' });
+      // tslint:disable-next-line: deprecation
+      return adapter.setAll(action.payload, { ...state, error: undefined });
     }
 
     case DetailsActionTypes.LoadDetailsFail: {
-      return adapter.removeAll({ ...state, error: action.payload });
+      return { ...state, error: action.payload.error, loading: false };
     }
 
     default:

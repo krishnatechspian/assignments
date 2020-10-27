@@ -5,7 +5,7 @@ import { AuthState } from './../../auth/+state/auth.reducer';
 import { ProductsService } from './services/products/products.service';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { Product } from './../../auth/data-models/product.d';
+import { Product } from '../../auth/data-models/product';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { getProducts } from './+state';

@@ -1,10 +1,10 @@
-import { Product } from './../../../auth/data-models/product.d';
+import { Product } from '../../../auth/data-models/product';
 import { Action } from '@ngrx/store';
 import { ProductsActions, ProductsActionTypes } from './products.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 export interface ProductsData extends EntityState<Product> {
-  error: string;
+  error?: Error;
   selectedProductId: number;
   loading: boolean;
 }
@@ -13,10 +13,9 @@ export interface ProductsState {
   readonly products: ProductsData;
 }
 
-export const adapter: EntityAdapter<Product> = createEntityAdapter<Product>({});
+export const adapter: EntityAdapter<Product> = createEntityAdapter<Product>();
 
 export const initialState: ProductsData = adapter.getInitialState({
-  error: '',
   selectedProductId: null,
   loading: false
 });
@@ -46,7 +45,7 @@ export function productsReducer(
 
 
     case ProductsActionTypes.LoadProductsSuccess: {
-      return adapter.setAll(action.payload, { ...state, error: '' });
+      return adapter.setAll(action.payload, { ...state, error: undefined });
     }
 
     // case ProductsActionTypes.LoadHeadersButtonsSuccess: {
@@ -70,7 +69,7 @@ export function productsReducer(
     // }
 
     case ProductsActionTypes.LoadProductsFail: {
-      return adapter.removeAll({ ...state, error: action.payload });
+      return { ...state, error: action.payload.error, loading: false };
     }
 
     // case ProductsActionTypes.LoadHeadersButtonsFail: {

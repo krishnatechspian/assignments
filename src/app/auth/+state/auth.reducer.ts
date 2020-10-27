@@ -4,14 +4,13 @@ import { User } from '../data-models/user';
 export interface AuthData {
   loading: boolean;
   user: User;
-  error: '';
+  error?: Error;
 }
 export interface AuthState {
   readonly auth: AuthData;
 }
 
 export const initialState: AuthData = {
-  error: '',
   user: null,
   loading: false
 };
@@ -28,6 +27,7 @@ export function authReducer(
       return { ...state, user: action.payload, loading: false };
     }
     case AuthActionTypes.LoginFail: {
+      // return { ...state, error: action.payload.error, loading: false };
       return { ...state, user: null, loading: false };
     }
     default:

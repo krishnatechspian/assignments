@@ -1,0 +1,47 @@
+<div class="container">
+  <!-- Nav -->
+
+  <app-header></app-header>
+</div>
+
+<div class="contain">
+
+  <div class="wrapper">
+
+    <div class="form">
+      <h3>Payment</h3>
+      <form [formGroup]="paymentForm">
+        <div class=" margin-top">
+          <p>
+            <app-input [fieldId]="'userFirstName'" [control]="paymentForm.get('userFirstName')"> </app-input>
+          </p>
+        </div>
+
+        <div class=" margin-top">
+          <p>
+            <app-input [fieldId]="'userLastName'" [control]="paymentForm.get('userLastName')"> </app-input>
+          </p>
+        </div>
+        <div class=" margin-top">
+          <p>
+            <app-input [fieldId]="'cardNumber'" [control]="paymentForm.get('cardNumber')"> </app-input>
+          </p>
+        </div>
+        <div class=" margin-top">
+          <p>
+            <app-input [fieldId]="'cvv'" [control]="paymentForm.get('cvv')"> </app-input>
+          </p>
+        </div>
+        <div class=" margin-top">
+          <p>
+            <app-input [fieldId]="'comments'" [control]="paymentForm.get('comments')"> </app-input>
+          </p>
+        </div>
+        <div class=" margin-top">
+          <p><button type="submit" class="text-togglebutton" [disabled]="!paymentForm.valid" (click)="payment()">Make
+              Payment</button></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

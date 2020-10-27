@@ -13,6 +13,7 @@ import * as fromAuth from './+state/auth.reducer';
 import { AuthEffects } from './+state/auth.effects';
 import { initialState as authInitialState } from './+state/auth.reducer';
 import { headerButtonsReducer, initialState as headerButtonsInitialState  } from '../pages/products/+state/headers-button/headers-button.reducer';
+import { SharedModule } from '../components/component.module';
 const authRoutes: Routes = [
     { path: 'login', component: LoginComponent },
 ];
@@ -25,10 +26,12 @@ const authRoutes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         LayoutModule,
+        SharedModule,
         StoreModule.forFeature('auth', fromAuth.authReducer,
         { initialState: authInitialState }),
         StoreModule.forFeature('headers-button', headerButtonsReducer, { initialState: headerButtonsInitialState }),
-        EffectsModule.forFeature([AuthEffects, HeaderButtonsEffects])
+        EffectsModule.forFeature([AuthEffects, HeaderButtonsEffects]),
+
     ],
     declarations: [LoginComponent],
 })

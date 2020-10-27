@@ -19,7 +19,8 @@ describe('DetailsEffects', () => {
             DetailsEffects,
             newLocal,
             {
-              provide: ProductsService
+              provide: ProductsService,
+              useValue: { load: jest.fn() }
             }
           ]
         });
@@ -35,26 +36,32 @@ describe('DetailsEffects', () => {
     describe('loadDetails', () => {
         it('should return a LoadDetailsSuccess action, with the details, on success', () => {
           const details = generateDetails();
-          console.log(details);
+
           const action = new LoadDetails();
-          const outcome = new LoadDetailsSuccess(details);
+          // tslint:disable-next-line: one-variable-per-declaration
+          const completion = new LoadDetailsSuccess(details),
+          response = cold('a|', { a: details }),
+          expected = cold('-b', { b: completion });
 
           actions = hot('-a', { a: action });
-          const response = cold('-a|', { a: details });
-          const expected = cold('--b', { b: outcome });
+
+        // mock the load function to be the response
           productService.getDetails = jest.fn(() => response);
 
           expect(effects.loadDetails$).toBeObservable(expected);
+
         });
 
         it('should return a LoadDetailsFail action, with an error, on failure', () => {
           const action = new LoadDetails();
           const error = new Error();
-          const outcome = new LoadDetailsFail({ error });
+          const outcome = new LoadDetailsFail('error');
+          const response = cold('#');
+          const expected = cold('-b', { b: outcome });
 
           actions = hot('-a', { a: action });
-          const response = cold('-#|', {}, error);
-          const expected = cold('--(b|)', { b: outcome });
+
+        // mock the load function to be the response
           productService.getDetails = jest.fn(() => response);
 
           expect(effects.loadDetails$).toBeObservable(expected);

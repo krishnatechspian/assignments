@@ -12,6 +12,7 @@ import {
   RouterStateSerializer,
   StoreRouterConnectingModule
 } from '@ngrx/router-store';
+import { SharedModule } from './components/component.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -21,6 +22,7 @@ import {
     AppRoutingModule,
     AuthModule,
     AppRoutingModule,
+    SharedModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot()

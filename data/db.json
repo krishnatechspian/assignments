@@ -54,27 +54,40 @@
         {
             "text": "Home",
             "id": 1,
-            "url": "/"
+            "url": "/",
+            "access" : "Admin"
+        },
+        {
+            "text": "Home",
+            "id": 5,
+            "url": "/",
+            "access" : "Login"
         },
         {
             "text": "Admin",
             "id": 2,
-            "url": "/product/list"
+            "url": "/product/list",
+            "access" : "Admin"
         },
         {
             "text": "Logout",
-            "id": 4
+            "id": 4,
+            "access" : "Admin"
         },
         {
             "text": "Login",
             "id": 3,
-            "url": "/user/login"
+            "url": "/user/login",
+            "access" : "Login"
         }
+       
     ],
     "services": [
         {
             "text": "Gym Membership",
+            "description" : "The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion.",
             "price": "2000rs",
+            "image": "https://i.ibb.co/2Y5LgrF/gym1.jpg",
             "id": 1,
             "topSection": [
                 {
@@ -88,6 +101,7 @@
                     "text": "",
                     "id": 1,
                     "details": "We are taking every precaution to make you feel safe..."
+                    
                 }
             ],
             "imageSection": [
@@ -124,28 +138,38 @@
                 {
                     "text": "For one person",
                     "price": "3000rs",
-                    "id": 1
+                    "description" : "The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion.",
+                    "id": 1,
+                    "image": "https://i.ibb.co/2Y5LgrF/gym1.jpg"
                 },
                 {
                     "text": "For two person",
                     "price": "2500rs",
-                    "id": 2
+                    "description" : "The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion.",
+                    "id": 2,
+                    "image": "https://i.ibb.co/J31P1q5/app-image.png"
                 },
                 {
                     "text": "For three person",
                     "price": "2000rs",
-                    "id": 3
+                    "description" : "The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion.",
+                    "id": 3,
+                    "image": "https://i.ibb.co/qMWScsW/cta-bg.jpg"
                 },
                 {
                     "text": "For four person",
                     "price": "1500rs",
-                    "id": 4
+                    "description" : "The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone who is not a champion.",
+                    "id": 4,
+                    "image": "https://i.ibb.co/2Y5LgrF/gym.jpg"
                 }
             ]
         },
         {
             "text": "Buy sports items",
+            "description" : "There may be people that have more talent than you, but there's no excuse for anyone to work harder than you do.",
             "price": "1000rs plus",
+            "image": "https://i.ibb.co/PQqrsVk/Sports-Stores-01.jpg",
             "id": 2,
             "topSection": [
                 {
@@ -195,28 +219,38 @@
                 {
                     "text": "For one person",
                     "price": "3000rs",
-                    "id": 1
+                    "id": 1,
+                    "description" : "There may be people that have more talent than you, but there's no excuse for anyone to work harder than you do.",
+                     "image": "https://i.ibb.co/PQqrsVk/Sports-Stores-01.jpg"
                 },
                 {
                     "text": "For two person",
                     "price": "2500rs",
-                    "id": 2
+                    "id": 2,
+                    "description" : "There may be people that have more talent than you, but there's no excuse for anyone to work harder than you do.",
+                    "image": "https://i.ibb.co/PQqrsVk/Sports-Stores-01.jpg"
                 },
                 {
                     "text": "For one person",
                     "price": "2000rs",
-                    "id": 3
+                    "id": 3,
+                    "description" : "There may be people that have more talent than you, but there's no excuse for anyone to work harder than you do.",
+                    "image": "https://i.ibb.co/PQqrsVk/Sports-Stores-01.jpg"
                 },
                 {
                     "text": "For two person",
                     "price": "1500rs",
-                    "id": 4
+                    "id": 4,
+                    "description" : "There may be people that have more talent than you, but there's no excuse for anyone to work harder than you do.",
+                    "image": "https://i.ibb.co/PQqrsVk/Sports-Stores-01.jpg"
                 }
             ]
         },
         {
             "text": "Tennis Membership",
+            "description" : "Life is like a game of tennis; the player who serves well seldom loses.",
             "price": "6000rs",
+            "image": "https://i.ibb.co/PtP2y3C/rogers.jpg",
             "id": 3,
             "topSection": [
                 {
@@ -266,28 +300,38 @@
                 {
                     "text": "For one person",
                     "price": "3000rs",
-                    "id": 1
+                    "id": 1,
+                    "description" : "Life is like a game of tennis; the player who serves well seldom loses.",
+                    "image": "https://i.ibb.co/PtP2y3C/rogers.jpg"
                 },
                 {
                     "text": "For two person",
                     "price": "2500rs",
-                    "id": 2
+                    "id": 2,
+                    "description" : "Life is like a game of tennis; the player who serves well seldom loses.",
+                    "image": "https://i.ibb.co/PtP2y3C/rogers.jpg"
                 },
                 {
                     "text": "For one person",
                     "price": "2000rs",
-                    "id": 3
+                    "id": 3,
+                    "description" : "Life is like a game of tennis; the player who serves well seldom loses.",
+                    "image": "https://i.ibb.co/PtP2y3C/rogers.jpg"
                 },
                 {
                     "text": "For two person",
                     "price": "1500rs",
-                    "id": 4
+                    "id": 4,
+                    "description" : "Life is like a game of tennis; the player who serves well seldom loses.",
+                    "image": "https://i.ibb.co/PtP2y3C/rogers.jpg"
                 }
             ]
         },
         {
             "text": "Cricket Membership",
+            "description" : "You don’t play for the crowd. You play for the country.”- Mahendra Singh Dhoni.",
             "price": "1000rs",
+            "image": "https://i.ibb.co/7k0cJXs/ab.jpg",
             "id": 4,
             "topSection": [
                 {
@@ -337,96 +381,34 @@
                 {
                     "text": "For one person",
                     "price": "3000rs",
-                    "id": 1
+                    "id": 1,
+                    "description" : "You don’t play for the crowd. You play for the country.”- Mahendra Singh Dhoni.",
+                    "image": "https://i.ibb.co/7k0cJXs/ab.jpg"
                 },
                 {
                     "text": "For two person",
                     "price": "2500rs",
-                    "id": 2
+                    "id": 2,
+                    "description" : "You don’t play for the crowd. You play for the country.”- Mahendra Singh Dhoni.",
+                    "image": "https://i.ibb.co/7k0cJXs/ab.jpg"
                 },
                 {
                     "text": "For one person",
                     "price": "2000rs",
-                    "id": 3
+                    "id": 3,
+                    "description" : "You don’t play for the crowd. You play for the country.”- Mahendra Singh Dhoni.",
+                    "image": "https://i.ibb.co/7k0cJXs/ab.jpg"
                 },
                 {
                     "text": "For two person",
                     "price": "1500rs",
-                    "id": 4
-                }
-            ]
-        },
-        {
-            "text": "Football Membership",
-            "price": "4000rs",
-            "id": 5,
-            "topSection": [
-                {
-                    "text": "",
-                    "id": 1,
-                    "details": "Best Gym Memership offer..."
-                }
-            ],
-            "middleSection": [
-                {
-                    "text": "",
-                    "id": 1,
-                    "details": "We are taking every precaution to make you feel safe..."
-                }
-            ],
-            "imageSection": [
-                {
-                    "url": "https://i.ibb.co/c12j7xf/sushil.jpg",
-                    "id": 1
-                },
-                {
-                    "url": "https://i.ibb.co/7k0cJXs/ab.jpg",
-                    "id": 2
-                },
-                {
-                    "url": "https://i.ibb.co/J31P1q5/app-image.png",
-                    "id": 3
-                },
-                {
-                    "url": "https://i.ibb.co/dbMDwbV/app-image2.png",
-                    "id": 4
-                },
-                {
-                    "url": "https://i.ibb.co/qMWScsW/cta-bg.jpg",
-                    "id": 5
-                },
-                {
-                    "url": "https://i.ibb.co/gPq6b5v/gym.jpg",
-                    "id": 6
-                },
-                {
-                    "url": "https://i.ibb.co/2Y5LgrF/gym1.jpg",
-                    "id": 7
-                }
-            ],
-            "details": [
-                {
-                    "text": "For one person",
-                    "price": "3000rs",
-                    "id": 1
-                },
-                {
-                    "text": "For two person",
-                    "price": "2500rs",
-                    "id": 2
-                },
-                {
-                    "text": "For one person",
-                    "price": "2000rs",
-                    "id": 3
-                },
-                {
-                    "text": "For two person",
-                    "price": "1500rs",
-                    "id": 4
+                    "id": 4,
+                    "description" : "You don’t play for the crowd. You play for the country.”- Mahendra Singh Dhoni.",
+                    "image": "https://i.ibb.co/7k0cJXs/ab.jpg"
                 }
             ]
         }
+        
     ],
     "images": [
         {
@@ -462,10 +444,6 @@
             "id": 8
         },
         {
-            "url": "https://i.ibb.co/WHhMG3f/i-Phone-app.png",
-            "id": 9
-        },
-        {
             "url": "https://i.ibb.co/M7t8szf/baseball.jpg",
             "id": 10
         },
@@ -484,7 +462,9 @@
     ],
     "details": [
         {
-            "text": "ASAH",
+            "text": "Fit and Shine",
+            "route": "/contact-us",
+            "routebutton": "Contact Us",
             "id": 1,
             "url": "https://i.ibb.co/mFHq21Y/header.jpg",
             "details": "All work and no play makes Jack a dull boy"

@@ -1,10 +1,10 @@
-import { HeaderButtons } from './../../../../auth/data-models/header-button.d';
+import { HeaderButtons } from '../../../../auth/data-models/header-button';
 import { Action } from '@ngrx/store';
 import { HeaderButtonAction, HeaderButtonActionTypes } from '../headers-button/headers-button.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 export interface HeaderButtonsData extends EntityState<HeaderButtons> {
-  error: string;
+  error?: Error;
   selectedHeaderButtonsId: number;
   loading: boolean;
 }
@@ -13,10 +13,9 @@ export interface HeadersButtonState {
   readonly headerButtons: HeaderButtonsData;
 }
 
-export const adapter: EntityAdapter<HeaderButtons> = createEntityAdapter<HeaderButtons>({});
+export const adapter: EntityAdapter<HeaderButtons> = createEntityAdapter<HeaderButtons>();
 
 export const initialState: HeaderButtonsData = adapter.getInitialState({
-  error: '',
   selectedHeaderButtonsId: null,
   loading: false
 });
@@ -30,11 +29,11 @@ export function headerButtonsReducer(
       return { ...state, loading: true };
 
     case HeaderButtonActionTypes.LoadHeadersButtonsSuccess: {
-      return adapter.setAll(action.payload, { ...state, error: '' });
+      return adapter.setAll(action.payload, { ...state, error: undefined });
     }
 
     case HeaderButtonActionTypes.LoadHeadersButtonsFail: {
-      return adapter.removeAll({ ...state, error: action.payload });
+      return { ...state, error: action.payload.error, loading: false };
     }
 
     default:

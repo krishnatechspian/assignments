@@ -21,8 +21,8 @@
     }
     
     .header a:hover {
-        background-color: #ddd;
-        color: black;
+        /* background-color: #ddd;
+        color: black; */
     }
     
     .header a.active {

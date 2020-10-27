@@ -1,0 +1,9 @@
+<header class="showcase">
+  <h2 class="showcase-heading">{{ showcase[0]?.text }}</h2>
+  <p>
+    <span class="showcase-heading">{{ showcase[0]?.details }}</span>
+  </p>
+  <a routerLink="/{{ showcase[0]?.route }}" class="btn">
+    <span class="showcase-heading"> {{ showcase[0]?.routebutton }} </span><i class="fa fa-phone" aria-hidden="true"></i>
+  </a>
+</header>

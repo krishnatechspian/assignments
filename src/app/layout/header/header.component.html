@@ -1,6 +1,2 @@
-<div class="header">
-    <a href="#default" class="logo">{{headerDetails.page}}</a>
-    <div class="header-right">
-        <a class="active" (click)="toggleTheme()"> <span class="text-togglebutton"> {{ toggleButtonName }}</span></a>
-    </div>
-</div>
+<app-header-layout-2 [headerButtons]="headerButtons$ | async" [isAuthenticated]="isAuthenticated">
+</app-header-layout-2>

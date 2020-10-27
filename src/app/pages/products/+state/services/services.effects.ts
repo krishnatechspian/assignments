@@ -26,7 +26,7 @@ export class ServicesEffects {
   );
 
   @Effect()
-  loadImages$ = this.actions$.pipe(
+  loadService$ = this.actions$.pipe(
     ofType(ServicesActionTypes.LoadServices),
     mergeMap(() =>
       this.productService

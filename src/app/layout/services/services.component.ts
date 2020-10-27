@@ -9,8 +9,11 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnChanges{
     @Input()service: any = [];
+    @Input()page: string ;
+
 
     ngOnChanges(): void {
         console.log(this.service);
+        console.log(this.page);
     }
 }

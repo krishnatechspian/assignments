@@ -1,4 +1,4 @@
-import { Product } from './../../../auth/data-models/product.d';
+import { Product } from '../../../auth/data-models/product';
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ProductsService } from './../services/products/products.service';

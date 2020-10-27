@@ -1,5 +1,13 @@
-<section class="portfolio">
+<!-- <section class="portfolio">
     <ng-container *ngFor="let data of images">
         <img [src]="data.url" alt="sushil" border="0" />
+    </ng-container>
+</section> -->
+
+<section class="home-cards ">
+    <ng-container *ngFor="let data of images">
+        <div>
+            <img [src]="data.url" alt="" />
+        </div>
     </ng-container>
 </section>

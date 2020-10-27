@@ -4,6 +4,8 @@ export interface Details {
     id?: number;
     url?: string;
     details?: string;
+    routebutton?: string;
+    route?: string;
   }
 
 
@@ -13,6 +15,8 @@ export  const generateDetail = (): Details => {
       url: faker.image.imageUrl(),
       details: faker.lorem.words(),
       text :  faker.lorem.word(),
+      routebutton: faker.lorem.words(),
+      route :  faker.lorem.word(),
     };
   };
 

@@ -3,7 +3,7 @@ import { AuthState } from './../+state/auth.reducer';
 import { Store } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { User } from '../data-models/user.d';
-import { Authenticate } from '../data-models/authenticate.d';
+import { Authenticate } from '../data-models/authenticate';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -39,10 +39,8 @@ export class AuthService {
   checkAuthentication(): boolean{
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
-        this.store.dispatch(new LoginSuccess(user));
         return true;
     }else{
-        this.store.dispatch(new LoginFail(user));
         return false;
     }
   }

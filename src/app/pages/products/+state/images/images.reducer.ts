@@ -5,7 +5,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { Image } from 'src/app/auth/data-models/image';
 
 export interface ImagesData extends EntityState<Image> {
-  error: string;
+  error?: Error;
   selectedImagesId: number;
   loading: boolean;
 }
@@ -17,7 +17,6 @@ export interface ImagesState {
 export const adapter: EntityAdapter<Image> = createEntityAdapter<Image>({});
 
 export const initialState: ImagesData = adapter.getInitialState({
-  error: '',
   selectedImagesId: null,
   loading: false
 });
@@ -32,11 +31,11 @@ export function imagesReducer(
 
 
     case ImagesActionTypes.LoadImagesSuccess: {
-      return adapter.setAll(action.payload, { ...state, error: '' });
+      return adapter.setAll(action.payload, { ...state, error: undefined });
     }
 
     case ImagesActionTypes.LoadImagesFail: {
-      return adapter.removeAll({ ...state, error: action.payload });
+      return { ...state, error: action.payload.error, loading: false };
     }
 
     default:

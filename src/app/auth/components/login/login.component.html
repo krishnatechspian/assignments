@@ -1,11 +1,27 @@
-<div class=" margin-medium">
-    <div class="container">
-        <form [formGroup]="loginForm">
-            <label for="text" class="required">Username</label>
-            <input type="text" id="username" name="username" placeholder="Username." formControlName="username"> <label for="text" class="required">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password." formControlName="password">
-            <button class="button" (click)="login()" [disabled]="!loginForm.valid">Submit</button>
-            <button class="button-primary" routerLink="/product/main2">Cancel</button>
-        </form>
+<div class="contain">
+    <div class="wrapper">
+        <div class="form">
+            <h3>Login</h3>
+            <form [formGroup]="loginForm">
+                <div class=" margin-top">
+                    <p>
+                        <app-input [fieldId]="'username'" [control]="loginForm.get('username')"> </app-input>
+                    </p>
+                </div>
+
+                <div class=" margin-top">
+                    <p>
+                        <app-input [fieldId]="'password'" [control]="loginForm.get('password')"> </app-input>
+                    </p>
+                </div>
+                <div class="margin-top">
+                    <p><button type="submit" [disabled]="!loginForm.valid" (click)="login()" class="text-togglebutton">Send</button></p>
+                </div>
+                <div class="margin-top">
+                    <p><button type="button"  routerLink="/product/main2" class="text-togglebutton">Cancel</button></p>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
